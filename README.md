@@ -1,17 +1,29 @@
-# Gemini Proxy API
+# Vercel Gemini Proxy API
 
-This is a simple Vercel Serverless function to call Google Gemini API.
+A minimal Vercel Serverless function to securely call Google Gemini API.
 
-## How to use
+## Setup
 
-1. Fork this repo to your GitHub account.
-2. Connect it to Vercel (Import Project).
-3. Set Environment Variable `GEMINI_API_KEY`.
-4. Deploy.
+1. Fork or clone this repository.
+2. Connect to Vercel via the dashboard.
+3. Add an Environment Variable on Vercel:
+   - **Key**: GEMINI_API_KEY
+   - **Value**: Your real Gemini API key
+4. Deploy (Vercel will auto-build and deploy the function).
 
-POST to `/api/gemini` with JSON body:
-```json
-{ "prompt": "your question here" }
+## Usage
+
+Send a POST request to:
+
+```
+https://<your-vercel-project>.vercel.app/api/gemini
 ```
 
-You will get Gemini's response back.
+with JSON body:
+```json
+{ "prompt": "Your question here" }
+```
+
+## No Static Files
+
+This repository only contains a serverless function. There is no static output directory.
